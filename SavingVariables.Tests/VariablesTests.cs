@@ -4,11 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SavingVariables.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class VariablesTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InstanceOfAVariable()
         {
+            Variable userVariable = new Variable();
+            
         }
     }
 }
