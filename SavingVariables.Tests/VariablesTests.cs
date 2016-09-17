@@ -10,7 +10,6 @@ namespace SavingVariables.Tests
         public void InstanceOfAVariable()
         {
             Variable userVariable = new Variable();
-            
         }
-    }
+     }
 }

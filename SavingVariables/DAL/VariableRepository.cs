@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SavingVariables
+namespace SavingVariables.DAL
 {
-    class BlogRepository
+    class VariableRepository
     {
+
     }
 }

@@ -69,7 +69,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BlogRepositoryTests.cs" />
+    <Compile Include="DAL\SavingVariablesContext.cs" />
+    <Compile Include="DAL\VariableRepositoryTests.cs" />
     <Compile Include="VariablesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,6 +84,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
