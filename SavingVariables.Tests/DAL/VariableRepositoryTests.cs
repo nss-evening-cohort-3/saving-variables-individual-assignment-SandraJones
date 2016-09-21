@@ -1,6 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Runtime.Remoting.Contexts;
+using SavingVariables.DAL;
 
 namespace SavingVariables.Tests.DAL
 {
@@ -9,22 +17,30 @@ namespace SavingVariables.Tests.DAL
     {
         private List<Constants> constants_list;
         private Mock<DbSet<Constants>> mock_constants_table;
-        private Mock<SavingVariablesContext> mock_context;
+        private Mock<SavingVariables.Constants> mock_context;
+        
 
         [TestInitialize]
         public void Initialize()
         {
-            mock_context = new Mock<SavingVariablesContext>();
+            mock_context = new Mock<VarRepoContext>.Mock();
             mock_constants_table = new Mock<DbSet<Constants>>();
-            constants_list = new List<Constants>();
+            constants_list = new List<Constants>();       
         }
-
+        [TestMethod]
+        public void RepoEnsureCanCreateInstanceOfMock()
+        { 
+            Assert.IsNotNull(mock_context);
+        }
+      
         private class Constants
         {
+            
         }
 
         private class DbSet<T>
         {
+
         }
     }
 
@@ -33,5 +49,14 @@ namespace SavingVariables.Tests.DAL
             public Mock()
             {
             }
+
+        public static explicit operator Mock<T>(Mock<VarRepoContext> v)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal class Mock : Mock<Constants>
+        {
+        }
     }
 }

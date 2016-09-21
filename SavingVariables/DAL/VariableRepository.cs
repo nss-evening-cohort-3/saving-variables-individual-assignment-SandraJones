@@ -8,6 +8,15 @@ namespace SavingVariables.DAL
 {
     class VariableRepository
     {
+        public VarRepoContext mock_context { get; }
 
+        public VariableRepository(VarRepoContext _context)
+        {
+            mock_context = _context;
+        }
+
+        public VariableRepository()
+        {
+        }
     }
 }

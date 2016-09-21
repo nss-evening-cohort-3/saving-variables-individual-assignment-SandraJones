@@ -9,7 +9,7 @@ namespace SavingVariables.Tests
         [TestMethod]
         public void InstanceOfAVariable()
         {
-            Variable userVariable = new Variable();
+            Constants userVariable = new Constants();
         }
      }
 }

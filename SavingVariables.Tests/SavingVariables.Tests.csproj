@@ -69,7 +69,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DAL\SavingVariablesContext.cs" />
+    <Compile Include="DAL\VarRepoContextTests.cs" />
     <Compile Include="DAL\VariableRepositoryTests.cs" />
     <Compile Include="VariablesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
