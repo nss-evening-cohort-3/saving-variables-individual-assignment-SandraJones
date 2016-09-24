@@ -9,9 +9,8 @@ using System.Runtime.Remoting.Contexts;
 
 namespace SavingVariables.DAL
 {
-    public class VarRepoContext : DbContext
+    public class VarRepoContext : DbContext//DbContext is for Entity connecting to Db;  it's the application context
     {
-        public virtual DbSet<Constants> Constants { get; set; }
-        
+        public virtual DbSet<Constant> Constants { get; set; }      
     }
 }

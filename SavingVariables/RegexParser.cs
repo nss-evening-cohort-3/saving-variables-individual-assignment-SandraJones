@@ -11,7 +11,7 @@ namespace SavingVariables
     public class RegexParser
     {
         public RegexParser parser = new RegexParser();
-        private Constants constants = new Constants();
+        private Constant constants = new Constant();
         public int Term1 { get; set; }
         public int Term2 { get; set; }
         public int Operator { get; set; }
@@ -29,7 +29,7 @@ namespace SavingVariables
                 if (!canParse)
                 {
                     char termA = char.Parse(match.Groups[1].Value);
-                    firstTerm = constants.ReturnValueOfConstant(termA);
+                    
                 }
                 Term1 = firstTerm;
 
@@ -52,7 +52,7 @@ namespace SavingVariables
                 {
                     char key = match.Groups[1].Value[0];
                     int value = int.Parse(match.Groups[2].Value);
-                    constants.UserCreateAConstToAddToDictionary(key, value);
+                   
                 }
                 else
                 {

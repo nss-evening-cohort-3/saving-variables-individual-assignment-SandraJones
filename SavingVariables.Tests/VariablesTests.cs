@@ -1,4 +1,5 @@
 ﻿using System;
+using SavingVariables.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SavingVariables.Tests
@@ -9,7 +10,7 @@ namespace SavingVariables.Tests
         [TestMethod]
         public void InstanceOfAVariable()
         {
-            Constants userVariable = new Constants();
+            Constant userVariable = new Constant();
         }
      }
 }

@@ -54,7 +54,16 @@
   <ItemGroup>
     <Compile Include="DAL\VariableRepository.cs" />
     <Compile Include="DAL\VarRepoContext.cs" />
-    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Migrations\201609241724095_InitialState.cs" />
+    <Compile Include="Migrations\201609241724095_InitialState.Designer.cs">
+      <DependentUpon>201609241724095_InitialState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609241731492_charToString.cs" />
+    <Compile Include="Migrations\201609241731492_charToString.Designer.cs">
+      <DependentUpon>201609241731492_charToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Constant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexParser.cs" />
@@ -69,6 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609241724095_InitialState.resx">
+      <DependentUpon>201609241724095_InitialState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609241731492_charToString.resx">
+      <DependentUpon>201609241731492_charToString.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
