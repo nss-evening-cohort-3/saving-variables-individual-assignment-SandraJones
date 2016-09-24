@@ -50,6 +50,11 @@ namespace SavingVariables.Tests.DAL
             {
             }
 
+        public static implicit operator Mock<T>(Mock<VarRepoContext>.Mock v)
+        {
+            throw new NotImplementedException();
+        }
+
         public static explicit operator Mock<T>(Mock<VarRepoContext> v)
         {
             throw new NotImplementedException();

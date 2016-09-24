@@ -11,18 +11,45 @@ namespace SavingVariables.Models
     public class Constants
     {
         [Key]
-        public int id { get; set; }
+        public int constantsId { get; set; }
 
         [Required]
         public virtual List<Constants> constants { get; set; }
 
-        internal void UserCreateAConstToAddToDictionary(char key, int value)
+        private Dictionary<char, int> storeConstantsDictionary = new Dictionary<char, int>();
+        
+        //add a constant to dictionary
+        public void UserCreateAConstToAddToDictionary(char key, int value)
         {
-            throw new NotImplementedException();
+            if (storeConstantsDictionary.ContainsKey(key))
+            {
+                throw new ArgumentException("That constant already exists.");
+            }
+            else
+            {
+                storeConstantsDictionary.Add(key, value);//.Add(key, value)
+            }
         }
-
-
-
+        //return value of constant from dictionary
+        public int ReturnValueOfConstant(char key)
+        {
+            if (storeConstantsDictionary.ContainsKey(key))
+            {
+                return storeConstantsDictionary[key];
+            }
+            else
+            {
+                throw new ArgumentException("You are free to set that constant by entering it in this form:  v = 45, with the variable on the left and the value to the right of the equals sign.");
+            }
+        }
+        // clear/value/delete constant from dictionary
+        public void RemoveConstantFromDictionary(char key)
+        {
+            if (storeConstantsDictionary.ContainsKey(key))
+            {
+                storeConstantsDictionary.Remove(key);
+            }
+        }  
     }
 }
 

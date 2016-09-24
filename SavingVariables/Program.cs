@@ -49,7 +49,7 @@ namespace SavingVariables
                     try
                     {
                         parser.ParseInput(userInput);
-                        int answer = eval.Calculate(parser);
+                       // int answer = eval.Calculate(parser);
                         Console.WriteLine(answer);
 
                         string lastExp = userInput;
