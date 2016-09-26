@@ -25,6 +25,11 @@ namespace SavingVariables
         {
             lastCommandList.Add(userInput);
         }
+
+        internal void AddToListOfAnswers(bool answer)
+        {
+            throw new NotImplementedException();
+        }
         //public class Evaluator
         //{
         //    private Addition add = new Addition();
@@ -33,26 +38,26 @@ namespace SavingVariables
         //    private Modulo mod = new Modulo();
         //    private Division div = new Division();
 
-            //public int Calculate(RegexParser parser)
-            //{
-            //    //Switch statement and cases here are to match operation user wants, 
-            //    //and then calculate the input at this point.
-            //    switch (parser.Operator)
-            //    {
-            //        case '+':
-            //            return add.AddTwoNumbers(parser.Term1, parser.Term2);//etc etc etc
-            //        case '-':
-            //            return sub.SubtractTwoNumbers(parser.Term1, parser.Term2);
-            //        case '*':
-            //            return mult.MultiplyTwoNumbers(parser.Term1, parser.Term2);
-            //        case '%':
-            //            return mod.ModuloTwoNumbers(parser.Term1, parser.Term2);
-            //        case '/':
-            //            return div.DivideTwoNumbers(parser.Term1, parser.Term2);
-            //        default:
-            //            throw new Exception("Invalid Operator");
-            //    }
-            //}
+        //public int Calculate(RegexParser parser)
+        //{
+        //    //Switch statement and cases here are to match operation user wants, 
+        //    //and then calculate the input at this point.
+        //    switch (parser.Operator)
+        //    {
+        //        case '+':
+        //            return add.AddTwoNumbers(parser.Term1, parser.Term2);//etc etc etc
+        //        case '-':
+        //            return sub.SubtractTwoNumbers(parser.Term1, parser.Term2);
+        //        case '*':
+        //            return mult.MultiplyTwoNumbers(parser.Term1, parser.Term2);
+        //        case '%':
+        //            return mod.ModuloTwoNumbers(parser.Term1, parser.Term2);
+        //        case '/':
+        //            return div.DivideTwoNumbers(parser.Term1, parser.Term2);
+        //        default:
+        //            throw new Exception("Invalid Operator");
+        //    }
+        //}
     }
 }
 

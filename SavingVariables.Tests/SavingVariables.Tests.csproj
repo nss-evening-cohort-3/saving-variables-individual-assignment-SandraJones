@@ -70,7 +70,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DAL\VariableRepositoryTests.cs" />
-    <Compile Include="VariablesTests.cs" />
+    <Compile Include="ConstantsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

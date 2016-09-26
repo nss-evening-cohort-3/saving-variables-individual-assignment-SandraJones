@@ -9,8 +9,10 @@ namespace SavingVariables
 {
     class Program
     {
+        private static int answer;
         static void Main(string[] args)
         {
+            RegexParser parser = new RegexParser();
             string userInput;
             int i = 0;
             //RegexParser parser = new RegexParser();
@@ -40,36 +42,34 @@ namespace SavingVariables
                     //storing last userInput;
                     Console.Write(stackList.lastCommandList.Last());
                 }
-                //else if (userInput.Contains('='))
-                //{
-                //    parser.parseConstant(userInput);
-                //}
-                //else
-                //{
-                //    try
-                //    {
-                //        parser.ParseInput(userInput);
-                //       // int answer = eval.Calculate(parser);
-                //        Console.WriteLine(answer);
+                else if (userInput.Contains('='))
+                {
+                    parser.parseConstant(userInput);
+                }
+                else
+                {
+                   try
+                   {
+                        parser.ParseInput(userInput);
+                       // int answer = eval.Calculate(parser);
+                        Console.WriteLine(answer);
 
-                //        string lastExp = userInput;
-                //        //add last command to lastCommandList;
-                //        //keep a running list of commands given by user
-                //        //stackList.AddToListOfCommands(userInput);
-                //        userInput.ToString();
-                //        stackList.AddToListOfCommands(userInput);
+                        string lastExp = userInput;
+                       // add last command to lastCommandList; keep a running list of commands given by user
+                        stackList.AddToListOfCommands(userInput);
+                        userInput.ToString();
+                        stackList.AddToListOfCommands(userInput);
 
-                //        //add this answer to the end of the answerList 
-                //        //answerList keeps a running List of answers generated
-                //        stackList.AddToListOfAnswers(answer);
+                      //  add this answer to the end of the answerList; answerList keeps a running List of answers generated
+                        stackList.AddToListOfAnswers(answer);
 
-                //    }
-                //    catch (Exception e)//can have multiple catch blocks to catch lower level exceptions
-                //    {
-                //        Console.WriteLine(e.Message);
-                //    }
-                //    i++;
-                //}
+                   }
+                   catch (Exception e)//can have multiple catch blocks to catch lower level exceptions
+                  {
+                       Console.WriteLine(e.Message);
+                  }
+                   i++;
+                }
             }
         }
     }

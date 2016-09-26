@@ -21,11 +21,9 @@ namespace SavingVariables.DAL
         {
             Context = _context;
         }
-        //GET THE CONSTANT from mock db
+       
         public List<Constant> GetConstants()
         {
-            int i = 1;
-           //search mock DB for constant
             return Context.Constants.ToList();
         }
         public void AddConstant(Constant _constant)//_ means private or local
@@ -38,7 +36,7 @@ namespace SavingVariables.DAL
             return Context.Constants.FirstOrDefault(c => c.Key == key);//for each row c of database look for key; c.Key is column value in that row;column name is Key
             
         }
-        public Constant RemoveConstants(string key)
+        public Constant RemoveConstant(string key)
         {
             Constant found_constant = FindConstantbyKey(key);
             if (found_constant != null)
@@ -48,5 +46,16 @@ namespace SavingVariables.DAL
             }
             return found_constant;
         }
+        //GET THE CONSTANT from mock db
+        public List<Constant> GetMockConstants()
+        {
+            return mock_context.Constants.ToList<Constant>();
+        }
+
+
+
+
+
+
     }
 }

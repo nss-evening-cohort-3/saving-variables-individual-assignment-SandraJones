@@ -10,7 +10,6 @@ namespace SavingVariables
 {
     public class RegexParser
     {
-        public RegexParser parser = new RegexParser();
         private Constant constants = new Constant();
         public int Term1 { get; set; }
         public int Term2 { get; set; }

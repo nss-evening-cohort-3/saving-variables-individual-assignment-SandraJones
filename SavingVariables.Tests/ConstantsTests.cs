@@ -5,10 +5,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SavingVariables.Tests
 {
     [TestClass]
-    public class VariablesTests
+    public class ConstantsTests
     {
         [TestMethod]
-        public void InstanceOfAVariable()
+        public void InstanceOfConstant()
         {
             Constant userVariable = new Constant();
         }
