@@ -20,6 +20,9 @@ namespace SavingVariables.Tests.DAL
         private List<Constant> constants_list;
         private Mock<DbSet<Constant>> mock_constants_table;
         private Mock<VarRepoContext> mock_context;
+        private object constant;
+        private object preConstantsList;
+
         VariableRepository repo { get; set; }
 
         [TestInitialize]
@@ -81,52 +84,42 @@ namespace SavingVariables.Tests.DAL
             GetConstants();
             Assert.AreEqual(constants_list.Count, 0);
         }
-//RESTart here
-     //   public void AddConstant(Constant mock_constant)//_ means private or local
-     //   {
-        //    mock_context.Constant.Add(_constant);
-        //    Context.SaveChanges();
-     //   }
+     
+        //the next two tests do not work
 
+        [TestMethod]
+        public void AddConstant(Constant mock_constant)//_ means private or local//taking out parameters, Constant mock_const
+        {
+            constants_list.Add(mock_constant);
+            Assert.AreNotEqual(constants_list, 0);
+           //mock_context.SaveChanges();
+        }
 
-    //    [TestMethod]
-   //     public void EnsureAddConstantWorks()
-   //     {
-          //preConstantsList = mock_context.constants_list.Count;
-          //AddConstant();
-        //    return mock_context.constants_list.Add();
-       //   return 
-        //  Assert.AreEqual(  )
-   //     }
+        [TestMethod]      
+        public void TestRemoveConstant(Constant mock_constant)
+        {
+            AddConstant(mock_constant);
+            constants_list.Remove(mock_constant);
+            Assert.AreEqual(constants_list.Count, 0);
+        }
 
-  //      [TestMethod]
-   //     public void TestRemoveConstant()
-    //    {
-          //preConstantsList = mock_context.constants_list;
-          //  RemoveConstant();
-          //  return mock_context.constants_list.Add();
-         //   Assert.AreEqual(constants_list.Count < preConstantsList.Count);
-    //    }
-
+        /*
+        public Constant FindConstantbyKey(string key)
+        {
+           return Context.Constants.FirstOrDefault(c => c.Key == key);//for each row c of database look for key; c.Key is column value in that row;column name is Key
+        }
+        public Constant RemoveConstants(string key)
+        {
+           Constant found_constant = FindConstantbyKey(key);
+           if (found_constant != null)
+           {
+               Context.Constants.Remove(found_constant);
+               Context.SaveChanges();
+           }
+           return found_constant;
+        }*/
     }
 }
-    /*
-    //all code below is all jacked up
-    public Constant FindConstantbyKey(string key)
-    {
-       return Context.Constants.FirstOrDefault(c => c.Key == key);//for each row c of database look for key; c.Key is column value in that row;column name is Key
-
-    }
-    public Constant RemoveConstants(string key)
-    {
-       Constant found_constant = FindConstantbyKey(key);
-       if (found_constant != null)
-       {
-           Context.Constants.Remove(found_constant);
-           Context.SaveChanges();
-       }
-       return found_constant;
-    }*/
 
 
 
