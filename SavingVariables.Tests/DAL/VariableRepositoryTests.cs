@@ -104,21 +104,15 @@ namespace SavingVariables.Tests.DAL
             Assert.AreEqual(constants_list.Count, 0);
         }
 
-        /*
-        public Constant FindConstantbyKey(string key)
+        [TestMethod]
+        public void TestFindConstantbyKey()
         {
-           return Context.Constants.FirstOrDefault(c => c.Key == key);//for each row c of database look for key; c.Key is column value in that row;column name is Key
-        }
-        public Constant RemoveConstants(string key)
-        {
-           Constant found_constant = FindConstantbyKey(key);
-           if (found_constant != null)
-           {
-               Context.Constants.Remove(found_constant);
-               Context.SaveChanges();
-           }
-           return found_constant;
-        }*/
+            Constant my_constant = new Constant();
+            string key = null;
+            constants_list.FirstOrDefault(c => c.Key == key);//for each row c of database look for key; c.Key is column value in that row;column name is Key
+            Assert.AreEqual(null, key);
+
+        }        
     }
 }
 
