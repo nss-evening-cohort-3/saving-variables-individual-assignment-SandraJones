@@ -88,18 +88,19 @@ namespace SavingVariables.Tests.DAL
         //the next two tests do not work
 
         [TestMethod]
-        public void AddConstant(Constant mock_constant)//_ means private or local//taking out parameters, Constant mock_const
+        public void AddConstant()//_ means private or local//taking out parameters, Constant mock_const
         {
-            constants_list.Add(mock_constant);
+            Constant my_constant = new Constant();
+            constants_list.Add(my_constant);
             Assert.AreNotEqual(constants_list, 0);
            //mock_context.SaveChanges();
         }
 
         [TestMethod]      
-        public void TestRemoveConstant(Constant mock_constant)
+        public void TestRemoveConstant()
         {
-            AddConstant(mock_constant);
-            constants_list.Remove(mock_constant);
+            Constant my_constant = new Constant();
+            constants_list.Remove(my_constant);
             Assert.AreEqual(constants_list.Count, 0);
         }
 
