@@ -10,7 +10,7 @@ namespace SavingVariables.Tests
         [TestMethod]
         public void InstanceOfConstant()
         {
-            Constant userVariable = new Constant();
+            Constant constant_ = new Constant();
         }
      }
 }

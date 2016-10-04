@@ -19,9 +19,7 @@ namespace SavingVariables.Tests.DAL
 
         private List<Constant> constants_list;
         private Mock<DbSet<Constant>> mock_constants_table;
-        private Mock<VarRepoContext> mock_context;
-        private object constant;
-        private object preConstantsList;
+        private Mock<VarRepoContext> mock_context;        
 
         VariableRepository repo { get; set; }
 
@@ -31,7 +29,6 @@ namespace SavingVariables.Tests.DAL
             mock_context = new Mock<VarRepoContext>();
             mock_constants_table = new Mock<DbSet<Constant>>();
             constants_list = new List<Constant>();
-            // repo = new VariableRepository(mock_context.Object);
         }
         [TestMethod]
         public void EnsureInstanceofRepository()
@@ -67,33 +64,31 @@ namespace SavingVariables.Tests.DAL
         public void EnsureTableIsEmpty()
         {
             mock_context = new Mock<VarRepoContext>();
-            // repo = new VariableRepository(mock_context.Object);
-            int listCount = constants_list.Count;//repo.GetConstants().Count;//returns a list
+            int listCount = constants_list.Count;
             Assert.AreEqual(listCount, 0);
         }
-
+        
         public List<Constant> GetConstants()
         {
             return constants_list.ToList();
         }
 
         [TestMethod]
-        //search mock DB for constant
         public void EnsureGetConstantsWorks()
         {
             GetConstants();
             Assert.AreEqual(constants_list.Count, 0);
         }
      
-        //the next two tests do not work
-
         [TestMethod]
-        public void AddConstant()//_ means private or local//taking out parameters, Constant mock_const
+        public void TestIfRepoCanAddConstant()
         {
+            //Arrange        
             Constant my_constant = new Constant();
+            //Act
             constants_list.Add(my_constant);
-            Assert.AreNotEqual(constants_list, 0);
-           //mock_context.SaveChanges();
+            //Assert
+            Assert.AreEqual(constants_list.Count, 1);         
         }
 
         [TestMethod]      
@@ -111,8 +106,7 @@ namespace SavingVariables.Tests.DAL
             string key = null;
             constants_list.FirstOrDefault(c => c.Key == key);//for each row c of database look for key; c.Key is column value in that row;column name is Key
             Assert.AreEqual(null, key);
-
-        }        
+        }     
     }
 }
 

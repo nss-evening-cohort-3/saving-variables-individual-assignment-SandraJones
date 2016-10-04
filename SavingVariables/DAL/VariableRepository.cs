@@ -26,7 +26,7 @@ namespace SavingVariables.DAL
         {
             return Context.Constants.ToList();
         }
-        public void AddConstant(Constant _constant)//_ means private or local
+        public void AddConstant(Constant _constant)//_ means private or local 
         {
             Context.Constants.Add(_constant);
             Context.SaveChanges();
@@ -46,16 +46,6 @@ namespace SavingVariables.DAL
             }
             return found_constant;
         }
-        //GET THE CONSTANT from mock db
-        public List<Constant> GetMockConstants()
-        {
-            return mock_context.Constants.ToList<Constant>();
-        }
-
-
-
-
-
 
     }
 }

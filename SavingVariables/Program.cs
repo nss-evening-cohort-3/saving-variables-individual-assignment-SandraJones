@@ -50,6 +50,23 @@ namespace SavingVariables
                 {
                    try
                    {
+                        //need something along the lines of a switch case for all the commands:
+                     //   switch
+
+                         //   case1: delete
+
+                        //    case2: remove
+
+                         //   case3: clear
+
+                        //    case4: remove all
+                        
+                        //    case 5: delete all
+
+                        //    case 6: clear all
+
+                        //    case 7: show all
+
                         parser.ParseInput(userInput);
                        // int answer = eval.Calculate(parser);
                         Console.WriteLine(answer);
